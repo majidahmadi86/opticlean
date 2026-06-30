@@ -143,6 +143,7 @@
   .rating span{font-size:.8rem;color:var(--body);font-weight:500}
   .hero-visual{display:grid;place-items:center}
   .hero-visual svg{width:100%;max-width:560px}
+  .hero-photo{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}
 
   /* ============ FEATURES ============ */
   .features{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -446,6 +447,8 @@
 
     <!-- HERO VISUAL — editorial product scene. Swap for client's real product photography. -->
     <div class="hero-visual reveal" data-d="2">
+      <img class="hero-photo" src="/hero-product.png" alt="OptiClean — bouteille, lunettes et livres anciens" onerror="if(this.dataset.t!=='1'){this.dataset.t='1';this.src='/hero-product.jpg';}else{this.style.display='none';var f=document.getElementById('heroFallback');if(f)f.style.display='block';}">
+      <div id="heroFallback" style="display:none">
       <svg viewBox="0 0 580 540" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
@@ -528,6 +531,7 @@
           <text x="64" y="74" font-family="Georgia,serif" font-size="8" font-weight="700" fill="#7a5a14" text-anchor="middle" letter-spacing="1">OPTICLEAN</text>
         </g>
       </svg>
+      </div>
     </div>
   </div>
 </section>
