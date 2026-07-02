@@ -472,7 +472,7 @@ function renderCart(){
   document.getElementById('sumTotal').textContent=fmt(line+ship);
   foot.style.display='block';
 }
-document.getElementById('checkoutBtn').addEventListener('click',()=>{document.getElementById('checkoutNote').classList.add('show');});
+document.getElementById('checkoutBtn').addEventListener('click',async()=>{const b=document.getElementById('checkoutBtn');b.disabled=true;b.style.opacity=.6;try{const r=await fetch('/api/create-checkout-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qty:cartQty,currency:currency,lang:lang})});const d=await r.json();if(d.url){location.href=d.url;}else{throw new Error('no url');}}catch(e){b.disabled=false;b.style.opacity=1;var n=document.getElementById('checkoutNote');n.textContent=(lang==='fr'?'Paiement momentanément indisponible — réessayez.':'Payment temporarily unavailable — please retry.');n.classList.add('show');}});
 
 let toastT;
 function toast(msg){const t=document.getElementById('toastEl');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
