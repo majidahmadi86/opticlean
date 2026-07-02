@@ -365,19 +365,24 @@
     *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
     .reveal{opacity:1;transform:none}
   }
+  /* ============ HERO FULL-BLEED (final) ============ */
+  .hero{position:relative}
+  .hero-glow{display:none}
+  .hero-bg{position:absolute;top:0;right:0;bottom:0;width:58%;background:url('/hero-product.jpg') center right/cover no-repeat;z-index:1}
+  .hero-bg::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(to right, var(--cream) 0%, rgba(245,239,226,0) 30%),
+    linear-gradient(to bottom, var(--cream) 0%, rgba(245,239,226,0) 8%),
+    linear-gradient(to top, var(--cream) 0%, rgba(245,239,226,0) 6%)}
+  .hero .wrap{position:relative;z-index:2;min-height:540px;align-items:center}
+  .brand-logo{height:92px}
+  @media(max-width:980px){
+    .hero-bg{position:relative;width:100%;height:300px}
+    .hero-bg::before{background:linear-gradient(to bottom, rgba(245,239,226,0) 78%, var(--cream) 100%)}
+    .hero .wrap{min-height:0}
+  }
 </style>
 </head>
 <body>
-
-<!-- ============ ANNOUNCEMENT ============ -->
-<div class="announce">
-  <div class="wrap">
-    <div class="announce-left">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg>
-      <span data-i18n="ann.ship">Livraison offerte dès 2 bouteilles</span>
-    </div>
-  </div>
-</div>
 
 <!-- ============ HEADER ============ -->
 <header class="header" id="header">
@@ -429,6 +434,7 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
     <span class="hero-glow"></span>
     <div class="hero-copy">
@@ -448,91 +454,6 @@
 
     <!-- HERO VISUAL — editorial product scene. Swap for client's real product photography. -->
     <div class="hero-visual reveal" data-d="2">
-      <div class="hero-photo-wrap"><img class="hero-photo" src="/hero-product.jpg" alt="OptiClean — bouteille, lunettes et livres anciens" onerror="this.onerror=null;this.parentNode.style.display='none';var f=document.getElementById('heroFallback');if(f)f.style.display='block';"></div>
-      <div id="heroFallback" style="display:none">
-      <svg viewBox="0 0 580 540" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#604528"/><stop offset=".35" stop-color="#3a2a17"/><stop offset="1" stop-color="#241708"/>
-          </linearGradient>
-          <linearGradient id="glassHi" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#866239" stop-opacity=".9"/><stop offset=".5" stop-color="#3a2a17" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2118"/><stop offset="1" stop-color="#0f0a04"/></linearGradient>
-          <linearGradient id="tort" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a4a22"/><stop offset="1" stop-color="#3f2410"/></linearGradient>
-        </defs>
-
-        <!-- ground shadow -->
-        <ellipse cx="290" cy="470" rx="220" ry="26" fill="#3a2a17" opacity=".1"/>
-
-        <!-- BOOKS (back right) -->
-        <g transform="translate(316 332)">
-          <!-- bottom book -->
-          <path d="M4 36 L210 36 L226 24 L20 24 Z" fill="#7c5a34"/>
-          <rect x="4" y="36" width="206" height="30" rx="3" fill="#5e4426"/>
-          <rect x="4" y="36" width="206" height="6" fill="#e8dcc0"/>
-          <!-- top book -->
-          <path d="M0 4 L196 4 L214 -10 L18 -10 Z" fill="#8a6238"/>
-          <rect x="0" y="4" width="192" height="30" rx="3" fill="#6b4d2b"/>
-          <rect x="0" y="4" width="192" height="6" fill="#efe3c8"/>
-          <text x="96" y="26" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#e8b23c" text-anchor="middle" letter-spacing="1.5">OPHTALMOLOGIE</text>
-          <text x="178" y="60" font-family="Georgia,serif" font-size="7" fill="#d9c39a" text-anchor="end" letter-spacing="1">TRAITÉ · PARIS · 1887</text>
-        </g>
-
-        <!-- GLASSES (resting on books) -->
-        <g transform="translate(360 250) rotate(-7)">
-          <path d="M64 22 C40 8 22 8 4 20" fill="none" stroke="#3f2410" stroke-width="4" stroke-linecap="round"/>
-          <path d="M84 22 C108 8 126 8 144 20" fill="none" stroke="#3f2410" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="44" cy="34" r="30" fill="url(#tort)" fill-opacity=".55" stroke="#2f1c0c" stroke-width="4.5"/>
-          <circle cx="104" cy="34" r="30" fill="url(#tort)" fill-opacity=".55" stroke="#2f1c0c" stroke-width="4.5"/>
-          <path d="M74 32c-2-3-8-3-10 0" fill="none" stroke="#2f1c0c" stroke-width="4.5"/>
-        </g>
-
-        <!-- BOTTLE (centre, hero) -->
-        <g transform="translate(150 132)">
-          <ellipse cx="60" cy="312" rx="62" ry="12" fill="#3a2a17" opacity=".18"/>
-          <!-- cap -->
-          <rect x="38" y="0" width="44" height="34" rx="5" fill="url(#cap)"/>
-          <rect x="44" y="32" width="32" height="10" rx="2" fill="#0f0a04"/>
-          <!-- neck + shoulder -->
-          <path d="M46 40h28v14c0 4 14 6 14 22v6H32v-6c0-16 14-18 14-22z" fill="#2e2014"/>
-          <!-- body -->
-          <rect x="8" y="82" width="104" height="226" rx="20" fill="url(#glass)"/>
-          <rect x="8" y="82" width="42" height="226" rx="20" fill="url(#glassHi)"/>
-          <!-- label -->
-          <rect x="16" y="120" width="88" height="160" rx="6" fill="#e8b23c"/>
-          <rect x="16" y="120" width="88" height="160" rx="6" fill="none" stroke="#b9851b" stroke-width="1.4"/>
-          <text x="60" y="150" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#241a06" text-anchor="middle" letter-spacing="1.4">OPTICLEAN</text>
-          <text x="60" y="163" font-family="Georgia,serif" font-style="italic" font-size="8" fill="#5a4310" text-anchor="middle">by Dr. Zac</text>
-          <!-- mini emblem -->
-          <g transform="translate(60 190)" stroke="#241a06" stroke-width="1.3" fill="none">
-            <circle cx="0" cy="0" r="16" stroke="#b9851b"/>
-            <ellipse cx="0" cy="-7" rx="9" ry="2" fill="#241a06" stroke="none"/>
-            <path d="M-7 -6c0-3 1-5 7-5s7 2 7 5" fill="#241a06" stroke="none"/>
-            <circle cx="-4" cy="1" r="3.4"/><circle cx="4" cy="1" r="3.4"/><path d="M-0.6 1h1.2"/>
-            <path d="M-5 7c1.2 1.4 3 2 5 2s3.8-.6 5-2"/>
-          </g>
-          <text x="60" y="226" font-family="Inter,sans-serif" font-size="5.4" fill="#3a2c0e" text-anchor="middle" letter-spacing="1.5">— EST. 2024 —</text>
-          <line x1="34" y1="234" x2="86" y2="234" stroke="#b9851b" stroke-width=".8"/>
-          <text x="60" y="246" font-family="Inter,sans-serif" font-size="4.6" fill="#3a2c0e" text-anchor="middle" letter-spacing=".6">NETTOYANT POUR LUNETTES</text>
-          <text x="60" y="254" font-family="Inter,sans-serif" font-size="4.6" fill="#5a4310" text-anchor="middle" letter-spacing=".6">EYEWEAR CLEANER</text>
-          <text x="60" y="272" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#241a06" text-anchor="middle">50ml ℮</text>
-        </g>
-
-        <!-- CLOTH (front) -->
-        <g transform="translate(322 398) rotate(-6)">
-          <path d="M0 18 L132 0 L150 96 L18 116 Z" fill="#e8b23c"/>
-          <path d="M0 18 L132 0 L150 96 L18 116 Z" fill="none" stroke="#cc9628" stroke-width="4" stroke-dasharray="0 9" stroke-linecap="round"/>
-          <path d="M0 18 L132 0 L150 96 L18 116 Z" fill="none" stroke="#c99325" stroke-width="1.2"/>
-          <g transform="translate(58 52)" stroke="#7a5a14" stroke-width="1" fill="none" opacity=".75">
-            <circle cx="0" cy="-4" r="9" stroke="#9a7418"/>
-            <path d="M-4 -2c0-2 .6-3 4-3s4 1 4 3" fill="#7a5a14" stroke="none"/>
-            <circle cx="-2.4" cy="0" r="2"/><circle cx="2.4" cy="0" r="2"/>
-          </g>
-          <text x="64" y="74" font-family="Georgia,serif" font-size="8" font-weight="700" fill="#7a5a14" text-anchor="middle" letter-spacing="1">OPTICLEAN</text>
-        </g>
-      </svg>
-      </div>
     </div>
   </div>
 </section>
