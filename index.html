@@ -380,19 +380,17 @@
     .hero-bg::before{background:linear-gradient(to bottom, rgba(245,239,226,0) 78%, var(--cream) 100%)}
     .hero .wrap{min-height:0}
   }
-  /* ============ HEADER FINAL: centered lockup, arc below nav line, one-screen hero ============ */
+  /* ============ HEADER FINAL v2: equal columns, baked medallion, one-screen hero ============ */
   .header{background:var(--cream)}
-  .header .wrap{align-items:center}
+  .header .wrap{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center}
   .nav-l{gap:1.25rem}
-  .nav-r{gap:1.15rem}
+  .nav-r{gap:1.1rem}
   .icon-btn{width:34px;height:34px}
   .logo{margin:0 auto}
-  .brand-logo{height:116px;margin:0 auto -44px;position:relative;z-index:2}
-  .header::after{content:"";position:absolute;left:50%;top:calc(100% - 44px);transform:translateX(-50%);width:88px;height:88px;border-radius:50%;background:var(--cream);border:1px solid var(--line-soft);box-shadow:0 10px 18px -12px rgba(40,30,15,.35);z-index:-1}
-  .hero .wrap{min-height:0;height:calc(100vh - 112px);max-height:900px;align-items:center}
+  .brand-logo{height:118px;margin:0 auto -52px;position:relative;z-index:2}
+  .hero .wrap{min-height:0;height:calc(100vh - 96px);max-height:860px;align-items:center}
   @media(max-width:980px){
-    .brand-logo{height:92px;margin-bottom:-34px}
-    .header::after{width:70px;height:70px;top:calc(100% - 35px)}
+    .brand-logo{height:94px;margin-bottom:-40px}
     .hero .wrap{height:auto;min-height:0}
   }
 </style>
