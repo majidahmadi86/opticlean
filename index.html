@@ -380,6 +380,16 @@
     .hero-bg::before{background:linear-gradient(to bottom, rgba(245,239,226,0) 78%, var(--cream) 100%)}
     .hero .wrap{min-height:0}
   }
+  /* ============ LOGO CENTERED + MEDALLION OVERHANG ============ */
+  .header{overflow:visible}
+  .header .wrap{align-items:center}
+  .logo{position:relative;margin:0 auto;display:block}
+  .brand-logo{height:118px;margin:0 auto -42px;position:relative;z-index:1}
+  .logo::before{content:"";position:absolute;left:50%;bottom:-58px;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;background:var(--cream);border:1px solid var(--line-soft);box-shadow:0 8px 16px -12px rgba(40,30,15,.4);z-index:0}
+  @media(max-width:980px){
+    .brand-logo{height:96px;margin-bottom:-32px}
+    .logo::before{width:62px;height:62px;bottom:-45px}
+  }
 </style>
 </head>
 <body>
