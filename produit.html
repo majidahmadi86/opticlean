@@ -309,8 +309,9 @@
   /* ============ FIRST SECTION FITS ONE SCREEN (desktop) ============ */
   @media(min-width:981px){
     .crumb{padding:1rem 0 .2rem}
+    .product .wrap{grid-template-columns:.92fr 1.08fr;gap:2.8rem}
     .product{padding:.8rem 0 3.6rem}
-    .gal-main img{aspect-ratio:auto;height:calc(100vh - 300px);max-height:560px;min-height:340px;object-fit:cover}
+    .gal-main img{aspect-ratio:auto;width:100%;height:auto;max-height:calc(100vh - 296px);object-fit:contain;background:#E9E1D0}
     .gal-thumb{width:78px;height:64px}
     .p-title{font-size:clamp(1.7rem,2.9vw,2.3rem);margin-bottom:.6rem}
     .p-rating{margin-bottom:.9rem}
