@@ -390,6 +390,17 @@
     .brand-logo{height:96px;margin-bottom:-32px}
     .logo::before{width:62px;height:62px;bottom:-45px}
   }
+  /* ============ LOGO: true page-center + half-medallion below nav line ============ */
+  .logo::before{display:none}
+  .header .wrap{position:relative}
+  .logo{position:absolute;left:50%;top:10px;transform:translateX(-50%);margin:0}
+  .brand-logo{height:118px;margin:0;position:relative;z-index:2}
+  .header::after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);width:86px;height:48px;background:var(--cream);border:1px solid var(--line-soft);border-top:none;border-radius:0 0 44px 44px;box-shadow:0 12px 16px -14px rgba(40,30,15,.4);z-index:1}
+  @media(max-width:980px){
+    .brand-logo{height:96px}
+    .logo{top:8px}
+    .header::after{width:70px;height:38px;border-radius:0 0 36px 36px}
+  }
 </style>
 </head>
 <body>
