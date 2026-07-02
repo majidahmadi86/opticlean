@@ -306,6 +306,21 @@
     *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
     .reveal{opacity:1;transform:none}
   }
+  /* ============ FIRST SECTION FITS ONE SCREEN (desktop) ============ */
+  @media(min-width:981px){
+    .crumb{padding:1rem 0 .2rem}
+    .product{padding:.8rem 0 3.6rem}
+    .gal-main img{aspect-ratio:auto;height:calc(100vh - 300px);max-height:560px;min-height:340px;object-fit:cover}
+    .gal-thumb{width:78px;height:64px}
+    .p-title{font-size:clamp(1.7rem,2.9vw,2.3rem);margin-bottom:.6rem}
+    .p-rating{margin-bottom:.9rem}
+    .p-price{font-size:2.2rem}
+    .p-desc{margin:.9rem 0 1.1rem}
+    .p-usp{margin-bottom:1.2rem}
+    .p-usp li{margin-bottom:.4rem}
+    .buy-box{padding:1.2rem 1.4rem}
+    .buy-total{margin-top:.8rem}
+  }
 </style>
 </head>
 <body>
